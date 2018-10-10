@@ -66,8 +66,8 @@ class MusicLibraryController
     binding.pry
     index = input.to_i - 1
     
-    if index >= 0 && songs.length > input.to_i
-      song = songs[index]
+    if index >= 0 && self.abc_songs.length > input.to_i
+      song = self.abc_songs[index]
       puts "Playing #{song.name} by #{song.artist}"
       self.abc_songs = []
     end
