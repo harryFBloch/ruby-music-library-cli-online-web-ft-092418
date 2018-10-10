@@ -21,8 +21,6 @@ class MusicLibraryController
     case input
     when "list songs"
       self.list_songs
-    when
-      
     else
       self.call unless input == "exit"
     end
