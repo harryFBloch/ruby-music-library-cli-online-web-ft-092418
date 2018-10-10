@@ -29,9 +29,12 @@ class MusicLibraryController
         self.list_artists
       when 'list_genres'
         self.list_genres
-      when
+      when 'play song'
+        self.play_song
+      when 'exit'
+        
       else
-        self.call unless input == "exit"
+        self.call 
     end
   end
   
