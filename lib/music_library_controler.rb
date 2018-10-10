@@ -58,12 +58,10 @@ class MusicLibraryController
   end
   
   def play_song
-    binding.pry
     puts "Which song number would you like to play?"
-    
+   self.abc_songs = [] if self.abc_songs == nil 
     self.abc_songs = self.list_songs unless self.abc_songs.length != 0
     input = gets
-    binding.pry
     index = input.to_i - 1
     
     if index >= 0 && self.abc_songs.length > input.to_i
