@@ -19,10 +19,19 @@ class MusicLibraryController
     puts "What would you like to do?"
     input = gets.chomp
     case input
-    when "list songs"
-      self.list_songs
-    else
-      self.call unless input == "exit"
+      when "list songs"
+        self.list_songs
+      when "list genres"
+        self.list_genres
+      when 'list_artist'
+        self.list_artist
+      when 'list_artists'
+        self.list_artists
+      when 'list_genres'
+        self.list_genres
+      when
+      else
+        self.call unless input == "exit"
     end
   end
   
