@@ -59,7 +59,7 @@ class MusicLibraryController
   
   def play_song
     puts "Which song number would you like to play?"
-   self.abc_songs = [] if self.abc_songs == nil 
+    self.abc_songs = [] if self.abc_songs == nil 
     self.abc_songs = self.list_songs unless self.abc_songs.length != 0
     input = gets
     index = input.to_i - 1
