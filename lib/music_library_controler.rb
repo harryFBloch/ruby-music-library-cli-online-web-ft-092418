@@ -69,7 +69,7 @@ class MusicLibraryController
     if index >= 0 && @@abc_songs.length > input.to_i
       song = @@abc_songs[index]
       puts "Playing #{song.name} by #{song.artist.name}"
-      @@abc_songs = []
+      
     end
   end
   
