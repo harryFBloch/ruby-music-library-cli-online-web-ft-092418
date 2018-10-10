@@ -1,6 +1,6 @@
 
 class MusicLibraryController
-  @@abc_songs
+  @@abc_songs = []
   
   def initialize(path = './db/mp3s')
     importer = MusicImporter.new(path)
