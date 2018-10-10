@@ -1,9 +1,10 @@
 
 class MusicLibraryController
-  
+  attr_accessor :abc_songs
   def initialize(path = './db/mp3s')
     importer = MusicImporter.new(path)
     importer.import
+    self.abc_songs []
   end
   
   def call 
@@ -59,7 +60,8 @@ class MusicLibraryController
   def play_song
     binding.pry
     puts "Which song number would you like to play?"
-    songs = self.list_songs
+    
+    self.abc_songs = self.list_songs unless self.abc_songs.length != 0
     input = gets
     binding.pry
     index = input.to_i - 1
@@ -67,6 +69,7 @@ class MusicLibraryController
     if index >= 0 && songs.length > input.to_i
       song = songs[index]
       puts "Playing #{song.name} by #{song.artist}"
+      self.abc_songs = []
     end
   end
 end
