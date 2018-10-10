@@ -59,16 +59,23 @@ class MusicLibraryController
   
   def play_song
     puts "Which song number would you like to play?"
-    self.abc_songs = [] if self.abc_songs == nil 
-    self.abc_songs = self.list_songs unless self.abc_songs.length != 0
+    @@abc_songs = @@list_songs unless @@abc_songs.length != 0
     input = gets
     index = input.to_i - 1
     
-    if index >= 0 && self.abc_songs.length > input.to_i
-      song = self.abc_songs[index]
+    if index >= 0 && @@abc_songs.length > input.to_i
+      song = @@abc_songs[index]
       puts "Playing #{song.name} by #{song.artist}"
-      self.abc_songs = []
+      @@abc_songs = []
     end
+  end
+  
+  def self.abc_songs
+    @@abc_songs
+  end
+  
+  def self.abc_songs=(array)
+    @@abc_songs = array
   end
 end
 
