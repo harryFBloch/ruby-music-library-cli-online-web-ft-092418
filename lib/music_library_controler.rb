@@ -59,7 +59,10 @@ class MusicLibraryController
   
   def play_song
     puts "Which song number would you like to play?"
-    @@abc_songs = list_songs unless @@abc_songs.length != 0
+    if @@abc_songs.length == 0
+      @@abc_songs = Song.all.sort_by {|song| song.name}
+      list_songs 
+    end
     input = gets
     index = input.to_i - 1
     
