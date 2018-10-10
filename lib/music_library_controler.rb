@@ -3,7 +3,6 @@ class MusicLibraryController
   attr_accessor :abc_songs
   
   def initialize(path = './db/mp3s')
-    self.abc_songs []
     importer = MusicImporter.new(path)
     importer.import
   end
